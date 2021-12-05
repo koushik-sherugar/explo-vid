@@ -5,8 +5,8 @@ import { React, useState, useEffect } from "react";
 import "../styles/grid.css";
 
 import axios from "axios";
-import VideoPlayer from "react-video-js-player";
-// import Videoplayer from "./Videoplayer";
+// import VideoPlayer from "react-video-js-player";
+import Videoplayer from "./Videoplayer";
 import { Link } from "react-router-dom";
 // Y
 let api_key = "AIzaSyBVBS2je41eAGApF_oXJ4d4olg924KsQQY";
@@ -64,14 +64,11 @@ const Apivideo = () => {
   }
   return (
     <>
-      {/* <Videoplayer name="karthik" /> */}
       <div className="container">
         <div className="gallery">
           {youtubeData.map((data, vid) => {
             return (
               <>
-                {/* <Videoplayer name={data.id} /> */}
-
                 <div
                   key={vid}
                   // onClick={() => {
@@ -79,32 +76,26 @@ const Apivideo = () => {
                   // }}
                   className="vid"
                 >
-                  {/* {data.id} */}
-                  {/* {console.log(
-                  "dataId",
-                  `https://youtube.com/watch?v=${data.id}`
-                )} */}
-                  {/* <a href="https://youtube.com/watch?v=${data.id}"> */}
                   {/* <a href={`https://youtube.com/embed/${data.id}/autoplay=1`}> */}
                   <Link to="/videoplayer">
                     <img
                       src={data.snippet.thumbnails.medium.url}
                       alt="youtube video"
-                      // onClick={() => {
-                      // console.log("data.iddddd", data.id);
-                      // <Videoplayer name={data.id} />;
+                      onClick={() => {
+                        console.log("data.iddddd", data.id);
+                        <Videoplayer name={data.id} />;
 
-                      // <VideoPlayer
-                      //   // poster={pic1}
-                      //   height="300px"
-                      //   width="300px"
-                      //   // autoPlay
-                      //   bigPlayButton={false}
-                      //   hideControls={["volume", "timer"]}
-                      //   playbackRates={[0.5, 1, 1.5, 2]}
-                      //   src={`https://youtube.com/embed/${data.id}`}
-                      // />;
-                      // }}
+                        // <VideoPlayer
+                        //   // poster={pic1}
+                        //   height="300px"
+                        //   width="300px"
+                        //   // autoPlay
+                        //   bigPlayButton={false}
+                        //   hideControls={["volume", "timer"]}
+                        //   playbackRates={[0.5, 1, 1.5, 2]}
+                        //   src={`https://youtube.com/embed/${data.id}`}
+                        // />;
+                      }}
                     />
                     {
                       // dataID = playVideo()
