@@ -46,6 +46,19 @@
   border-right: 5px solid #bc01f5;
   background: rgba(0, 0, 0, 0.05);
 }
+.head-text h1 {
+  color: #bc01f5;
+  font-size: 7rem;
+  font-weight: bolder;
+  font-family: "Gwendolyn", cursive;
+}
+.head-text p {
+  margin-top: 2rem;
+  color: #c00ef7;
+  font-size: 2rem;
+  font-weight: 500;
+  font-family: monospace;
+}
 .container p {
   position: relative;
   height: auto;

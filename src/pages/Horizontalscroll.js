@@ -87,14 +87,15 @@ const Horizontalscroll = () => {
         ></iframe> */}
         {Hviddata.map((vid, id) => {
           return (
-            <iframe
-              className="card"
-              allowfullscreen
-              className="card YOUTUBE-iframe-video video-card-top"
-              data-thumbnail-src={vid.thumbnail}
-              frameborder="0"
-              src={vid.videoSrc}
-            />
+            <div className="p-2">
+              <iframe
+                allowfullscreen
+                className="card YOUTUBE-iframe-video video-card-top"
+                data-thumbnail-src={vid.thumbnail}
+                frameborder="0"
+                src={vid.videoSrc}
+              />
+            </div>
           );
         })}
       </div>

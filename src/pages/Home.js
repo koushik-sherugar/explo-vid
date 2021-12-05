@@ -1,12 +1,13 @@
 import React from "react";
+import "../styles/grid.css";
 const Home = () => {
   return (
     <>
-      <div className=" text-center">
-        <div className="mt-lg-5 mt-4">
-          <h1 className="">Explo-vid </h1>
-          <h5 className="  text-success">created by koushik</h5>
-        </div>
+      <div className="mt-lg-5 mt-4 text-center head-text">
+        <h1 className="  display-1 text-capitalize fw-bolder text-primary ">
+          Explo-vid
+        </h1>
+        <p className="  text-indigo  ">created by koushik</p>{" "}
       </div>
     </>
   );

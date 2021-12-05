@@ -66,6 +66,8 @@ const Apivideo = () => {
   return (
     <>
       <div className="container">
+        <h1>Explo-vid</h1>
+        <p>a world tobe explored....</p>
         <div className="gallery">
           {youtubeData.map((data, vid) => {
             return (
