@@ -2,10 +2,12 @@
 // key 2: AIzaSyBVBS2je41eAGApF_oXJ4d4olg924KsQQY
 import { React, useState, useEffect } from "react";
 // import "../styles/vedios.css";
-import "../styles/home.css";
+import "../styles/grid.css";
 
 import axios from "axios";
-
+import VideoPlayer from "react-video-js-player";
+// import Videoplayer from "./Videoplayer";
+import { Link } from "react-router-dom";
 // Y
 let api_key = "AIzaSyBVBS2je41eAGApF_oXJ4d4olg924KsQQY";
 let video_http = "https://www.googleapis.com/youtube/v3/videos?";
@@ -13,11 +15,10 @@ let channel_http = "https://www.googleapis.com/youtube/v3/channels?";
 
 const Apivideo = () => {
   const [youtubeData, setdata] = useState([]);
-
   const getData = () => {
     axios
       .get(
-        `https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=8&regionCode=IN&key=${api_key}`
+        `https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=20&regionCode=IN&key=${api_key}`
       )
       .then((response) => {
         // console.log(response.data.items);
@@ -28,12 +29,11 @@ const Apivideo = () => {
         console.log(error);
       });
   };
-  // }, []);
   useEffect(() => {
     getData();
   }, []);
 
-  console.log("youtubeDataaa", youtubeData);
+  // console.log("youtubeDataaa", youtubeData);
 
   // useEffect(() => {
   // fetch(
@@ -57,48 +57,64 @@ const Apivideo = () => {
   //   .catch((err) => console.log(err));
   // }, []);
 
-  // const dataList = youtubeData.items.map((data) => {
-  //   return data;
-  // });
-
-  // console.log("dataLIST", dataList);
-  // const onThumbnailSelect = () => {
-  //   let Yid = youtubeData[0].id;
-  //   console.log(Yid);
-  // };
+  function playVideo(id) {
+    console.log("playVideo id", id);
+    // <Videoplayer data={id} />;
+    const dataId = id;
+  }
   return (
     <>
+      {/* <Videoplayer name="karthik" /> */}
       <div className="container">
         <div className="gallery">
-          {/* <iframe src="https://www.youtube.com/embed/${data[2].id}" /> */}
-          {/* <iframe
-            width="420"
-            height="315"
-            src="https://www.youtube.com/embed/X_4rcQeiKDk"
-            frameborder="0"
-            allowfullscreen
-          ></iframe> */}
-
-          {youtubeData.map((data, id) => {
+          {youtubeData.map((data, vid) => {
             return (
-              <div
-                key={id}
-                // onClick={() => {
-                //   onThumbnailSelect();
-                // }}
-                className="vid"
-              >
-                {console.log(
+              <>
+                {/* <Videoplayer name={data.id} /> */}
+
+                <div
+                  key={vid}
+                  // onClick={() => {
+                  //   onThumbnailSelect();
+                  // }}
+                  className="vid"
+                >
+                  {/* {data.id} */}
+                  {/* {console.log(
                   "dataId",
-                  "https://youtube.com/watch?v=${data.id}"
-                )}
-                <a href="https://youtube.com/watch?v=${data.id}">
-                  <img
-                    src={data.snippet.thumbnails.medium.url}
-                    alt="youtube video"
-                  />
-                </a>
-              </div>
+                  `https://youtube.com/watch?v=${data.id}`
+                )} */}
+                  {/* <a href="https://youtube.com/watch?v=${data.id}"> */}
+                  {/* <a href={`https://youtube.com/embed/${data.id}/autoplay=1`}> */}
+                  <Link to="/videoplayer">
+                    <img
+                      src={data.snippet.thumbnails.medium.url}
+                      alt="youtube video"
+                      // onClick={() => {
+                      // console.log("data.iddddd", data.id);
+                      // <Videoplayer name={data.id} />;
+
+                      // <VideoPlayer
+                      //   // poster={pic1}
+                      //   height="300px"
+                      //   width="300px"
+                      //   // autoPlay
+                      //   bigPlayButton={false}
+                      //   hideControls={["volume", "timer"]}
+                      //   playbackRates={[0.5, 1, 1.5, 2]}
+                      //   src={`https://youtube.com/embed/${data.id}`}
+                      // />;
+                      // }}
+                    />
+                    {
+                      // dataID = playVideo()
+                      // console.log("playVideo()", playVideo())
+                      function playVideo(id) {}
+                    }
+                  </Link>
+                  {/* </a> */}
+                </div>
+              </>
             );
           })}
         </div>

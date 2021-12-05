@@ -1,5 +1,8 @@
 import React from "react";
-import "../styles/home.css";
+import "../styles/grid.css";
+import "../styles/localvid.css";
+import pic1 from "../assets/images/pic1.jpeg";
+import VideoPlayer from "react-video-js-player";
 import vid1 from "../assets/vedios/vid1.mp4";
 import vid2 from "../assets/vedios/vid2.mp4";
 import vid3 from "../assets/vedios/vid3.mp4";
@@ -57,7 +60,7 @@ const VidData = [
   },
 
   {
-    id: 9,
+    id: 11,
     autoplay: "autoPlay",
     vedio: vid3,
   },
@@ -72,7 +75,7 @@ function Localvideo() {
           {VidData.map((vidEach, index) => {
             return (
               <div className="vid">
-                <video
+                {/* <video
                   height="300px"
                   width="100%"
                   className="vedio-item"
@@ -80,6 +83,16 @@ function Localvideo() {
                   loop
                   controls
                   muted
+                  src={vidEach.vedio}
+                /> */}
+                <VideoPlayer
+                  poster={pic1}
+                  height="300px"
+                  width="300px"
+                  // autoPlay
+                  bigPlayButton={false}
+                  hideControls={["volume", "timer"]}
+                  playbackRates={[0.5, 1, 1.5, 2]}
                   src={vidEach.vedio}
                 />
               </div>

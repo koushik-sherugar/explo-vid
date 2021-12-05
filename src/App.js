@@ -7,6 +7,7 @@ import Localvideo from "./pages/Localvideo";
 import Apivideo from "./pages/Apivideo";
 import Navbar from "./pages/Navbar";
 import Home from "./pages/Home";
+import Videoplayer from "./pages/Videoplayer";
 function App() {
   return (
     <>
@@ -18,6 +19,7 @@ function App() {
           <Route exact path="apivideo" element={<Apivideo />} />
 
           <Route exact path="About" element={<About />} />
+          <Route exact path="videoplayer" element={<Videoplayer />} />
         </Routes>
       </Router>
       {/* <Grid /> */}
