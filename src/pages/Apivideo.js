@@ -7,7 +7,7 @@ import "../styles/grid.css";
 import axios from "axios";
 // import VideoPlayer from "react-video-js-player";
 import Videoplayer from "./Videoplayer";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 // Y
 let api_key = "AIzaSyBVBS2je41eAGApF_oXJ4d4olg924KsQQY";
 let video_http = "https://www.googleapis.com/youtube/v3/videos?";
@@ -15,6 +15,7 @@ let channel_http = "https://www.googleapis.com/youtube/v3/channels?";
 
 const Apivideo = () => {
   const [youtubeData, setdata] = useState([]);
+  let navigate = useNavigate();
   const getData = () => {
     axios
       .get(
@@ -56,6 +57,9 @@ const Apivideo = () => {
   //   })
   //   .catch((err) => console.log(err));
   // }, []);
+  const thumbclicked = (data) => {
+    console.log(`${data} da`);
+  };
 
   function playVideo(id) {
     console.log("playVideo id", id);
@@ -77,32 +81,36 @@ const Apivideo = () => {
                   className="vid"
                 >
                   {/* <a href={`https://youtube.com/embed/${data.id}/autoplay=1`}> */}
-                  <Link to="/videoplayer">
-                    <img
-                      src={data.snippet.thumbnails.medium.url}
-                      alt="youtube video"
-                      onClick={() => {
-                        console.log("data.iddddd", data.id);
-                        <Videoplayer name={data.id} />;
-
-                        // <VideoPlayer
-                        //   // poster={pic1}
-                        //   height="300px"
-                        //   width="300px"
-                        //   // autoPlay
-                        //   bigPlayButton={false}
-                        //   hideControls={["volume", "timer"]}
-                        //   playbackRates={[0.5, 1, 1.5, 2]}
-                        //   src={`https://youtube.com/embed/${data.id}`}
-                        // />;
-                      }}
-                    />
-                    {
-                      // dataID = playVideo()
-                      // console.log("playVideo()", playVideo())
-                      function playVideo(id) {}
-                    }
-                  </Link>
+                  <img
+                    src={data.snippet.thumbnails.medium.url}
+                    alt="youtube video"
+                    onDoubleClick={() => {
+                      navigate("/videoplayer");
+                      // thumbclicked(`data`);
+                      // console.log("data.iddddd", data.id);
+                      // <Videoplayer name={data.id} />;
+                      // onDoubleClick={() => {
+                      // window.alert(`Double clicked!`);
+                      // <Link to="/vedioplayer" />;
+                      // console.log("double click", data.id);
+                      // }}
+                      // <VideoPlayer
+                      //   // poster={pic1}
+                      //   height="300px"
+                      //   width="300px"
+                      //   // autoPlay
+                      //   bigPlayButton={false}
+                      //   hideControls={["volume", "timer"]}
+                      //   playbackRates={[0.5, 1, 1.5, 2]}
+                      //   src={`https://youtube.com/embed/${data.id}`}
+                      // />;
+                    }}
+                  />
+                  {
+                    // dataID = playVideo()
+                    // console.log("playVideo()", playVideo())
+                    function playVideo(id) {}
+                  }
                   {/* </a> */}
                 </div>
               </>

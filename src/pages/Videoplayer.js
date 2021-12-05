@@ -6,7 +6,9 @@ function Videoplayer(props) {
   }
   return (
     <>
-      <h1>pass id to src link - id is: {props.id}</h1>
+      <h1>
+        api id from apivedio component passed through prop is id: {props.id}
+      </h1>
       <iframe
         width="100%"
         height="700px"
