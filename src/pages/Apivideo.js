@@ -6,12 +6,12 @@ import "../styles/grid.css";
 
 import axios from "axios";
 // import VideoPlayer from "react-video-js-player";
-import Videoplayer from "./Videoplayer";
+// import Videoplayer from "./Videoplayer";
 import { Link, useNavigate } from "react-router-dom";
 // Y
 let api_key = "AIzaSyBVBS2je41eAGApF_oXJ4d4olg924KsQQY";
-let video_http = "https://www.googleapis.com/youtube/v3/videos?";
-let channel_http = "https://www.googleapis.com/youtube/v3/channels?";
+// let video_http = "https://www.googleapis.com/youtube/v3/videos?";
+// let channel_http = "https://www.googleapis.com/youtube/v3/channels?";
 
 const Apivideo = () => {
   const [youtubeData, setdata] = useState([]);
@@ -57,9 +57,9 @@ const Apivideo = () => {
   //   })
   //   .catch((err) => console.log(err));
   // }, []);
-  const thumbclicked = (data) => {
-    console.log(`${data} da`);
-  };
+  // const thumbclicked = (data) => {
+  //   console.log(`${data} da`);
+  // };
 
   function playVideo(id) {
     console.log("playVideo id", id);
@@ -86,24 +86,10 @@ const Apivideo = () => {
                     alt="youtube video"
                     onDoubleClick={() => {
                       navigate("/videoplayer");
+
                       // thumbclicked(`data`);
-                      // console.log("data.iddddd", data.id);
+                      console.log("data.iddddd", data.id);
                       // <Videoplayer name={data.id} />;
-                      // onDoubleClick={() => {
-                      // window.alert(`Double clicked!`);
-                      // <Link to="/vedioplayer" />;
-                      // console.log("double click", data.id);
-                      // }}
-                      // <VideoPlayer
-                      //   // poster={pic1}
-                      //   height="300px"
-                      //   width="300px"
-                      //   // autoPlay
-                      //   bigPlayButton={false}
-                      //   hideControls={["volume", "timer"]}
-                      //   playbackRates={[0.5, 1, 1.5, 2]}
-                      //   src={`https://youtube.com/embed/${data.id}`}
-                      // />;
                     }}
                   />
                   {
