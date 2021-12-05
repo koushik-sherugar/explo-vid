@@ -1,5 +1,7 @@
 import React from "react";
 import "../styles/videoplayer.css";
+import Horizontalscroll from "./Horizontalscroll";
+
 function Videoplayer(props) {
   {
     console.log("ppppppppppp", props);
@@ -12,11 +14,12 @@ function Videoplayer(props) {
       <iframe
         width="100%"
         height="700px"
-        // src="https://www.youtube.com/embed/X_4rcQeiKDk"
-        src="'https://www.youtube.com/embed/'`${props.id}`"
+        src="https://www.youtube.com/embed/X_4rcQeiKDk"
+        // src="'https://www.youtube.com/embed/'`${props.id}`"
         frameborder="0"
         allowfullscreen
       />
+      <Horizontalscroll />
     </>
   );
 }

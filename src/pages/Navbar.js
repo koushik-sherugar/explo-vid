@@ -25,15 +25,7 @@ const Navbar = () => {
                   Home
                 </a>
               </li>
-              <li className="nav-item ">
-                <a
-                  className="nav-link active"
-                  aria-current="page"
-                  href="/localvideo"
-                >
-                  local vedio
-                </a>
-              </li>
+
               <li className="nav-item ">
                 <a
                   className="nav-link active"
@@ -41,6 +33,15 @@ const Navbar = () => {
                   href="/apivideo"
                 >
                   Api vedio
+                </a>
+              </li>
+              <li className="nav-item ">
+                <a
+                  className="nav-link active"
+                  aria-current="page"
+                  href="/localvideo"
+                >
+                  local vedio
                 </a>
               </li>
               <li className="nav-item">

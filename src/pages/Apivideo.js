@@ -1,5 +1,3 @@
-//key-1:  AIzaSyBYkmudUiwp24v-x799xeLoUUikoep-5jo
-// key 2: AIzaSyBVBS2je41eAGApF_oXJ4d4olg924KsQQY
 import { React, useState, useEffect } from "react";
 // import "../styles/vedios.css";
 import "../styles/grid.css";
@@ -9,17 +7,16 @@ import axios from "axios";
 // import Videoplayer from "./Videoplayer";
 import { Link, useNavigate } from "react-router-dom";
 // Y
-let api_key = "AIzaSyBVBS2je41eAGApF_oXJ4d4olg924KsQQY";
 // let video_http = "https://www.googleapis.com/youtube/v3/videos?";
 // let channel_http = "https://www.googleapis.com/youtube/v3/channels?";
-
+let MAX_RESULT = 39;
 const Apivideo = () => {
   const [youtubeData, setdata] = useState([]);
   let navigate = useNavigate();
   const getData = () => {
     axios
       .get(
-        `https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=20&regionCode=IN&key=${api_key}`
+        `https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=${MAX_RESULT}&regionCode=IN&key=${process.env.REACT_APP_YOUTUBE_API_KEY}`
       )
       .then((response) => {
         // console.log(response.data.items);

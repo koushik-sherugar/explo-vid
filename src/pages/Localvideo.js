@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/grid.css";
-import "../styles/localvid.css";
-import pic1 from "../assets/images/pic1.jpeg";
+import "../styles/localvideo.css";
+// import pic1 from "../assets/images/pic1.jpeg";
 import VideoPlayer from "react-video-js-player";
 import vid1 from "../assets/vedios/vid1.mp4";
 import vid2 from "../assets/vedios/vid2.mp4";
@@ -11,58 +11,69 @@ const VidData = [
     id: 1,
     autoplay: "autoPlay",
     vedio: vid1,
+    posterSrc: "https://source.unsplash.com/1400x1900/?lotus,flower",
   },
   {
     id: 2,
     autoplay: "autoPlay",
 
     vedio: vid2,
+    posterSrc: "https://source.unsplash.com/1400x1900/?star,home",
   },
   {
     id: 3,
     autoplay: "autoPlay",
     vedio: vid3,
+    posterSrc: "https://source.unsplash.com/1400x1900/?gallexy,milkyway,home",
   },
   {
     id: 4,
     autoplay: "autoPlay",
     vedio: vid1,
+    posterSrc: "https://source.unsplash.com/1400x1900/?beach,home",
   },
   {
     id: 5,
     autoplay: "autoPlay",
     vedio: vid3,
+    posterSrc: "https://source.unsplash.com/1400x1900/?beach,home",
   },
   {
     id: 6,
     autoplay: "autoPlay",
     vedio: vid1,
+    posterSrc: "https://source.unsplash.com/1400x1900/?beach,home",
   },
   {
     id: 7,
     autoplay: "autoPlay",
     vedio: vid2,
+    posterSrc: "https://source.unsplash.com/1400x1900/?beach,home",
   },
   {
     id: 8,
     autoplay: "autoPlay",
     vedio: vid3,
+    posterSrc: "https://source.unsplash.com/1400x1900/?beach,home",
   },
   {
     id: 9,
     autoplay: "autoPlay",
     vedio: vid2,
+    posterSrc: "https://source.unsplash.com/1400x1900/?beach,home",
   },
   {
     id: 10,
     autoplay: "autoPlay",
     vedio: vid3,
+    posterSrc: "https://source.unsplash.com/1400x1900/?beach,home",
   },
 
   {
     id: 11,
     autoplay: "autoPlay",
     vedio: vid3,
+    posterSrc: "https://source.unsplash.com/1400x1900/?beach,home",
   },
 ];
 function Localvideo() {
@@ -86,10 +97,13 @@ function Localvideo() {
                   src={vidEach.vedio}
                 /> */}
                 <VideoPlayer
-                  poster={pic1}
+                  poster={vidEach.posterSrc}
                   height="300px"
-                  width="300px"
-                  // autoPlay
+                  width="500px"
+                  autoPlay={true}
+                  controls={true}
+                  responsive={true}
+                  fluid={true}
                   bigPlayButton={false}
                   hideControls={["volume", "timer"]}
                   playbackRates={[0.5, 1, 1.5, 2]}
