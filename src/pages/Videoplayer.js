@@ -9,11 +9,11 @@ function Videoplayer(props) {
     console.log("ppppppppppp", props);
   }
   const opts = {
-    height: "700",
+    height: "650",
     width: "100%",
     playerVars: {
-      // https://developers.google.com/youtube/player_parameters
-      // autoplay: 1,
+      autoplay: 1,
+      modestbranding: 1,
     },
   };
   return (
