@@ -32,7 +32,7 @@ const Navbar = () => {
                   aria-current="page"
                   href="/apivideo"
                 >
-                  Api vedio
+                  Api video
                 </a>
               </li>
               <li className="nav-item ">
@@ -41,7 +41,7 @@ const Navbar = () => {
                   aria-current="page"
                   href="/localvideo"
                 >
-                  local vedio
+                  local video
                 </a>
               </li>
               <li className="nav-item">
